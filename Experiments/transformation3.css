@@ -1,0 +1,25 @@
+.*{
+	margin:0px;
+	padding:0px;
+	
+}
+.rectangle{
+	width: 150px;
+	height: 150px;
+	background-color: red;
+	margin: 10px;
+	transition: height .5s;
+	border-radius:10px;
+	float:left;
+}
+
+
+
+
+
+.rectangle:hover  ,.square:hover{
+	width:150px;
+	height:250px;
+	background-color: green;
+	transition-delay: 0.05s;
+}

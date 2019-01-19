@@ -1,0 +1,62 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title> review</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
+	<script type="text/javascript" src = "{%static 'js/additional.js'%}"></script>
+</head>
+<body>
+<body>
+	<header> 
+		<div class = "heading">
+
+			<h1 style="color:white;margin-left:100px;position:relative;top:20px;font-size: 65px;	">Real Review</h1>
+				
+			<div class="side-btns">
+				<a class="signup" href="/signup">signup</a>	
+				<a class="login" href="/login">login</a>
+			</div>
+		</div>
+	</header>
+	
+	<div class="content">
+		<div class="left_content">
+			<form>
+				<input type="radio" name="option" value="politics">Politics<br><br>
+				<input type="radio" name="option">Technology<br><br>
+				<input type="radio" name="option">Conclusions<br><br>
+				<input type="radio" name="option">Random Topics<br>
+
+			</form>
+
+			
+
+		</div>		
+		<div class="main_content">
+			Main content
+			{% for content in contents%}
+				<div class="wrapper">
+					
+					<p style="width:80px;padding:2px;background-color: skyblue;">{{content.content_type}}<p><br>
+					<p>{{content.text_content}}<p>
+
+					<input id = "comment-btn"type="button" name="comment" value="Comment" onclick="comment_box()">
+					<input type="button" name="like" value="Like">
+
+				</div>
+
+			{%endfor%}
+
+		</div>
+		<div class="right_content">
+
+
+
+		</div>
+
+	</div>
+
+</body>
+</html>

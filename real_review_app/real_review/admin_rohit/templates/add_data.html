@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rohit</title>
+</head>
+<body>
+	<form method = "post">
+		{% csrf_token %}
+		<select name = "drop_down">
+			<option>Technology</option>
+			<option>Politics</option>
+			<option>Bollywood</option>
+			<option>Games</option>
+			<option>Memes</option>
+		</select><br>
+		<label>Content : </label><br>
+		<input type="text" name="main_content" required  style="width:500px;height:400px; padding:5px;"><br>
+		<input type="submit" name="" value="Save">
+	</form>
+</body>
+</html>

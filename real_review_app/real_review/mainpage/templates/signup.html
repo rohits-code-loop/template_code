@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup</title>
+</head>
+<body>
+	{{message}}
+
+	<span id="error"></span>
+	<form method= "post">
+		{% csrf_token %}
+		
+		{{ form.as_p }}
+
+		<input  type="submit" name="" value="Register">
+	</form>
+
+	<script>
+		
+		onload=function()
+		{
+			document.getElementById('id_usrID').addEventListener('blur',VerifyUserId);
+		}
+
+		function VerifyUserId()
+		{
+			usrID=this.value;
+
+			xhr=new XMLHttpRequest();
+			xhr.open("POST","/verifyuserid/");
+			xhr.send("usrID="+usrID);
+
+			xhr.onreadystatechange=function()
+			{
+				if(xhr.readyState==4 && xhr.status==200)
+				{
+					if(xhr.responseText=='True')
+					{
+						document.getElementById('error').innerHTML='USER ID already Taken';
+					}
+					else
+					{
+						document.getElementById('error').innerHTML="";
+					}
+				}
+			}
+
+		}
+
+	</script>
+
+</body>
+</html>

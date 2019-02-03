@@ -1,0 +1,24 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<link rel="stylesheet" type="text/css" href="{%static 'home.css'%}">
+</head>
+<body>
+	<h1 class="heading" >Question and Answer Game</h1>
+	<h2 class="sub_heading">Select option of your choice</h2>
+	<form method="post">
+		{%csrf_token%}
+		<div class="topform">
+			<select name="dropdown">
+				<option value="technology"><p>Technology</p></option>
+				<option value="political"><p>Political</p></option>
+				<option value="maths"><p>Maths</p></option>
+			</select>
+			<input class = "button" type="submit" value="Select">
+		</div>
+	</form>
+	
+</body>
+</html>

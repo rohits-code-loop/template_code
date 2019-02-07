@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title> homepage </title>
+    </head>
+    <body>
+        <h1>{{msg}}</h1>
+        <span>
+            <a href="/login">
+                <button>Login</button>
+            </a>
+        </span>
+
+        <span>
+            <a href="/logout">
+                <button>Logout</button>
+            </a>
+        </span>
+        <span>
+                <a href="/register">
+                    <button>Signup</button>
+                </a>
+            </span>
+
+        {{err}}
+        {%if request.user.is_authenticated %}
+        <h1>welcome {{request.user}} </h1>
+        {%endif %}
+    </body>
+</html>
